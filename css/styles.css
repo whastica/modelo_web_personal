@@ -1,0 +1,594 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,700&display=swap');
+
+/*definimos colores trabajando con la raiz del documento*/
+:root{
+     --gold1:#f7c687;
+     --gold2:#d79b40;
+     /* Dos digitos mas del color hexadecimal genera transparencia*/
+     --gray1:#FFFFFF80;
+     --gray2:#9d939390;
+     --black1:#1A1B1F;
+     --black2:#30353B;
+     --white1:#fafafa;
+     --white2:#e1e1dc;
+     --enCursoColor: greenyellow;
+     --terminadoColor:rgb(249, 100, 78);
+     /*Como todos los box shadows se repiten definimos la sombra de una vez*/
+     --shadow: 0 8px 8px;
+     --colorShadow: #00000033;
+     /*Variables para padding en la tabla estudios*/
+     --padingNormal: 12px;
+     --padingSmall: 6px;
+     --padingXS: 2px;
+     /*Variables para los elementos de la tabla*/
+     --backgroundColorTable: var(--gray2);
+     --bgActiveButton: var(--gray2);
+     --bgEvenRow: var(--gray1);
+     --hoverCellColor: var(--white2);
+     --textColor: var(--gold2);
+     --textColorActivebutton: var(--white1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    /*90% del ancho*/
+    width: 90%;
+    /*total ancho es 1200px*/
+    max-width:1200px;
+    margin: 0 auto;
+    /*Si algo sale del container que no se vea*/
+    overflow: hidden;
+    padding: 100px 0;
+    height: auto;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg,#30353B 0%,#1A1B1F 100%);
+}
+
+.nav__hero{
+    color: #fff;
+    height:70px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav_container{
+    display: flex;
+    /*Centrado vertical de los elementos*/
+    align-items: center;
+    /*para poner los elementos al costado*/
+    justify-content: space-between;
+    height: inherit;
+    padding: 0%;
+}
+
+.nombreLogo{
+    font-size: 30px;
+}
+
+.link{
+    display: inline-block;
+    color: inherit;
+    /*Para que no parezcan links*/
+    text-decoration: none;
+    font-weight: 300px;
+    padding: 10px;
+}
+
+.linkActive{
+    color: var(--gold1);
+    font-weight: 700;
+}
+
+.punto{
+    color: var(--gold1);
+}
+
+/*aqui esta la imagen y el texto del inicio*/
+.hero_main{
+    height:calc(10vh-70px) ;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.imagenInicio{
+    max-width: 50%;
+    /*Evitamos que no pierda tanta resolucion la imagen */
+    object-fit: cover;
+    /*calcular los el espacio para ajustar la imagen */
+    height:calc(100vh-70px) ;
+}
+
+.title{
+    font-size: 56px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.titleActive{
+    color: var(--gold1);
+    font-weight: 700;
+}
+
+.frase{
+    font-size: 24px;
+    color: var(--gray1);
+    text-shadow: var(--shadow) var(--colorShadow);
+    margin: 15px;
+}
+.fraseActive{
+    font-weight: 700;
+}
+
+.callToAction{
+    padding: 20px 30px;
+    display: inline-block;
+    background: linear-gradient(180deg, #f7ce90 0%, #f4db76 100%);
+    text-decoration: none;
+    color: var(--black2);
+    font-weight: 700px;
+    box-shadow: var(--shadow) var(--colorShadow);
+    border-radius: 6px;
+}
+
+/*Sobre mi*/
+
+.sobreMi{
+    background: #fafafa;
+}
+
+.subtitulo{
+    font-size: 42px;
+    margin-top: 30px;
+}
+
+.fraseSobreMi{
+    color: var(--black2);
+    font-size: 22px;
+    line-height: 32px;
+    /*Espacio entre textos*/
+    margin-bottom: 60px;
+}
+
+.continerOpciones{
+    /*para que los elementos se coloquen ala lado*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*si no hay mas espacio se coloquen los elementos abajo*/
+    flex-wrap: wrap;
+
+
+}
+
+.opciones{
+    width: 30%;
+    padding: 30px 0;
+    overflow: hidden ;
+    background: linear-gradient(180deg, var(--black2) 0%, var(--black1) 100%);
+    border-radius: 10px;
+    position: relative;
+    text-align: right;
+    margin-bottom: 60px;
+    box-shadow: 0 0 6px var(--colorShadow);
+}
+
+.opcion_imagen{
+    text-align: left;
+    width: 95%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.textoOpciones{
+    text-align: left;
+    width: 95%;
+    margin-left: auto;
+    padding-right: 25px;
+}
+
+.tituloOpcion{
+    font-size: 40px;
+    color: #fafafa;
+    margin-bottom: 8px;
+}
+
+.textoOpcion{
+    color: var(--gray2);
+    margin-bottom: 16px;
+}
+
+.opcionBoton{
+    display: block;
+    background: linear-gradient(180deg, #f7ce90 0%, #f4db76 100%);
+    border-radius: 6px;
+    text-decoration: none;
+    width: 100%;
+    color: var(--black1);
+    font-weight: 700;
+    text-align: center;
+    padding: 12px 0;
+}
+
+/*Estudios*/
+
+.containerTable{
+    background-color: var(--backgroundColorTable);
+    border-radius: 3px;
+    color: var(--textColor);
+    width: 600px;
+    margin: 30px auto;
+}
+
+
+.containerTable.tablaEstudios{
+    border-color: var(--gold1);
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.tablaEstudios,
+.tablaEstudios th,
+.tablaEstudios td{
+    padding: var(--padingNormal) var(--padingNormal);
+}
+
+.tablaEstudios th{
+    font-weight: bolder;
+    text-align: left;
+    border-bottom: solid 1px var(--gold1);
+}
+
+.tablaEstudios td{
+    border-bottom: solid 1px var(--gold1);
+}
+
+.tablaEstudios tbody tr:nth-child(even){
+    background-color: var(--bgEvenRow);
+}
+
+.subtituloEstudios{
+    padding-left: 150px;
+    color: var(--gold2);
+    font-size: 42px;
+    margin-top: 30px;
+}
+
+.tablaEstudios tbody tr:hover{
+    background-color: var(--hoverCellColor);
+}
+
+.tablaEstudios tbody tr .enCurso::after,
+.tablaEstudios tbody tr .terminado::after{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tablaEstudios tbody tr .enCurso::after{
+    content: 'En Curso';
+    color: var(--enCursoColor);
+}
+.tablaEstudios tbody tr .terminado::after{
+    content: 'Terminado';
+    color: var(--terminadoColor);
+}
+
+/*Proyectos*/
+
+.fechaopcion{
+    color: var(--gold2);
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.listaProyectos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.background{
+    width: 68%;
+    height: 150%;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 60px;
+}
+.bgImagen{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+.bgtext{
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
+    left: 15px;
+    color: var(--white1);
+}
+
+.bgtitulo{
+    font-size: 24 px;
+    margin-bottom: 4px;
+}
+
+
+.bgfrase{
+    font-size: 24 px;
+    margin-bottom: 4px;
+    color: var(--white1);
+}
+
+.textoOpcion{
+    color: var(--white1);
+}
+
+.subtituloProyectos{
+    font-size: 42px;
+    margin-top: 30px;
+    color: var(--gold2);
+}
+.fraseProyectos{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: var(--white1);
+}
+
+/* Formulario */
+
+.formulario{
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-bottom: 90px;
+    display:grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; /*espacio entre elementos*/
+}
+
+.formulario_label{
+    display: block;
+    font-weight: 700;
+    padding: 5px;
+    cursor: pointer;
+}
+.formulario_grupo-input{/*utilizado para coloar el input y el icono juntos de forma estable*/
+    position: relative;
+}
+
+.formulario_input{
+    width: 100%;
+    background: whitesmoke;
+    border: 3px solid silver;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px 0 15px;
+    transition: 0.4s ease all;
+}
+.formulario_input:focus{
+    /*cuando demos click en el input el borde cambia de tranparente a visual */
+    border: 3px solid slategrey;
+    outline: none;
+    box-shadow: 3px 0px 20px gray;
+}
+
+.formulario_input-error{/*Esconder sugerencias de error*/
+    font-size: 10px;
+    margin-bottom: 0px;
+    display: none;
+}
+
+.formulario_input-error-activo{/*activar sugerencias de error*/
+    display: block;
+}
+
+.fomulario_validar-estado{
+    /*estilos icono validacion de campo dentro del input*/
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 100px;
+    opacity: 0;
+}
+
+.formulario_grupoCondiciones,
+.formulario_mensaje,
+.formulario_grupo-formulario_BotonEnviar{
+    grid-column: span 2;
+}
+
+.formulario_mensaje{
+    height: 55px;
+    line-height: 55px;
+    background: darkred;
+    padding: 5px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario_mensaje-activo{
+    display: block;
+}
+
+.formulario_mensaje p {
+    margin: 0px;
+    padding: 0 5px;
+}
+
+.formulario_grupo-formulario_BotonEnviar{
+    display: flex;
+    flex-direction: column;/*colocar texto enviado exitosamente debajo del boton*/
+    align-items: center;
+}
+
+.formulario_botonEnviar{
+    height: 40px;
+    line-height: 30px;
+    width: 80px;
+    background: silver;
+    color: black;
+    font-weight: bold;
+    border: 2px solid slategray;
+    cursor: pointer;
+    transition: 0.2s ease all;
+}
+
+.formulario_botonEnviar:hover{
+    box-shadow: 4px 0px 20px silver;
+}
+
+.formulario_mensajeExito{
+    font-size: 16px;
+    color: rgb(21, 173, 21);
+    display: none;
+}
+
+.formulario_mensajeExito-activo{
+    display: block;
+}
+
+/*Estilos para las validaciones*/
+
+.formulario_grupo-correcto .fomulario_validar-estado{
+    color: rgb(21, 173, 21);
+    opacity: 1;
+}
+
+.formulario_grupo-incorrecto .formulario_label{
+    color:darkred;
+}
+.formulario_grupo-incorrecto .fomulario_validar-estado{
+    color:darkred;
+    opacity: 1;
+}
+.formulario_grupo-incorrecto .formulario_grupo-input{
+    border: 2px solid darkred;
+}
+
+/*Dependiendo del tamañano pasar de dos a una columna*/
+@media screen and (max-width: 800px){
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+
+    .formulario_grupoCondiciones,
+    .formulario_mensaje,
+    .formulario_grupo-formulario_BotonEnviar{
+        grid-column: 1;
+    }
+
+    .formulario_botonEnviar{
+        width: 100%;
+    }
+}
+
+.subtituloContacto{
+    font-size: 42px;
+    color: var(--gold2);
+}
+
+.containerContacto{
+        /*90% del ancho*/
+        width: 90%;
+        /*total ancho es 1200px*/
+        max-width:1200px;
+        margin: 0 auto;
+        /*Si algo sale del container que no se vea*/
+        overflow: hidden;
+        padding: 50px 0;
+}
+
+/*slider*/
+
+body{
+    background-color: var(--gray1);
+}
+
+#sliderpasatiempos{
+ font-family: sans-serif;
+ margin: auto;
+ background-color: var(--white2);
+ max-width: 800px;
+ width: 100%;
+ padding: 30px;
+ box-sizing: border-box;
+}
+
+#sliderpasatiempos> ul, li {
+   padding: 0;
+   margin: 0;
+   list-style: none;
+}
+
+#sliderpasatiempos > ul.slider{
+ position: relative;
+ max-width: 800px;
+ width: 100%;
+ height: 300px;
+}
+
+
+#sliderpasatiempos > ul.slider li {
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   opacity: 0;
+   width: inherit;
+   height: inherit;
+   transition: opacity .3s;
+   background:var(--white2);
+}
+
+#sliderpasatiempos > ul.slider li img{
+    height: 300px;
+    width: 700px;
+    object-fit: cover;
+}
+
+#sliderpasatiempos > ul.slider li:first-child {
+   opacity: 1; /*Mostramos el primer <li>*/
+}
+
+#sliderpasatiempos > ul.slider li:target {
+   opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+#sliderpasatiempos > .menu{
+ text-align: center;
+ margin: 20px;
+}
+
+#sliderpasatiempos > .menu li{
+ display: inline-block;
+ text-align: center;
+}
+
+#sliderpasatiempos > .menu li a{
+ display: inline-block;
+ color: white;
+ text-decoration: none;
+ background-color: grey;
+ padding: 10px;
+ width: 50px;
+ height: 50px;
+ font-size: 20px;
+ border-radius: 100%;
+}

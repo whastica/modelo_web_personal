@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Personal Ing Whalen</title>
+    <link rel = "stylesheet" href = "css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class = "hero">
+       <nav class="nav__hero">
+           <div class="container nav_container">
+                <div class="logo">
+                    <h2 class="nombreLogo">Whalen Caicedo Desing <span class = "punto">.</span></h2>
+                </div>
+                <div class="links">
+                    <a href="index.html" class="link">inicio</a>
+                    <a href="Estudios.html" class="link">Estudios</a>
+                    <a href="proyectos.html" class="link">Proyectos</a>
+                    <a href="pasatiempos.html" class="link">Pasatiempos</a>
+                    <a href="contacto.html" class="link linkActive">Contactanos</a>
+                </div>
+           </div>
+       </nav>
+       <div class="containerContacto">
+            <h2 class="subtituloContacto">Formulario de contacto <span class="punto">.</span></h2>
+       </div>
+
+       <form action="" class="formulario"  id = "formulario">
+            <!--Grupo Nombre-->
+            <div class = "formulario_grupo" id="grupo_nombre">
+                <label for = "nombre" class = "formulario_label">nombre</label>
+                <div class = "formulario_grupo-input">
+                    <input type="text" class="formulario_input" name= "nombre" id = "nombre" placeholder="Nombre">
+                    <i class="fomulario_validar-estado  far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> El nombre debe tener solo letras </p>
+            </div>
+            <!--Grupo Apellido-->
+            <div class = "formulario_grupo" id="grupo_apellido">
+                <label for = "apellido" class = "formulario_label">apellido</label>
+                <div class = "formulario_grupo-input">
+                    <input type="text" class="formulario_input" name= "apellido" id = "apellido" placeholder="apellido">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> El apellido debe tener solo letras </p>
+            </div>
+            <!--Grupo Usuario-->
+            <div class = "formulario_grupo" id="grupo_usuario">
+                <label for = "usuario" class = "formulario_label">usuario</label>
+                <div class = "formulario_grupo-input">
+                    <input type="text" class="formulario_input" name= "usuario" id = "usuario" placeholder="whalen123">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> El usuario debe tener una longitud minima de 8 caracteres entre numeros y letras recuerde no colocar simbolos de ningun tipo </p>
+            </div>
+            <!--Grupo Email-->
+            <div class = "formulario_grupo" id="grupo_email">
+                <label for = "email" class = "formulario_label">e-mail</label>
+                <div class = "formulario_grupo-input">
+                    <input type="email" class="formulario_input" name= "email" id = "email" placeholder="correo@correo.com">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> El usuario debe tener una longitud minima de 8 caracteres entre numeros y letras recuerde no colocar simbolos de ningun tipo </p>
+            </div>
+            <!--Grupo Telefono-->
+            <div class = "formulario_grupo" id="grupo_telefono">
+                <label for = "telefono" class = "formulario_label">telefono</label>
+                <div class = "formulario_grupo-input">
+                    <input type="text" class="formulario_input" name= "telefono" id = "telefono" placeholder="302345512">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> El telefono solo debe contener numeros</p>
+            </div>
+            <!--Grupo Direccion-->
+            <div class = "formulario_grupo" id="grupo_direccion">
+                <label for = "direccion" class = "formulario_label">direccion</label>
+                <div class = "formulario_grupo-input">
+                    <input type="text" class="formulario_input" name= "direccion" id = "direccion" placeholder="calle 3 no 48 - 28">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> la direccion no puede estar vacia</p>
+            </div>
+            <!--Grupo Tipo Documento-->
+            <div class = "formulario_grupo" id="grupo_Tdocumento">
+                <label for = "Tdocumento" class = "formulario_label">Tipo de documento</label>
+                <div class = "formulario_grupo-input">
+                    <select class="formulario_input" name= "Tdocumento" id = "Tdocumento">
+                        <option value="cedula">Cedula de Ciudadania</option>
+                        <option value="tarjeta">Tarjeta de identidad</option>
+                        <option value="cedulaExtranjera">Cedula de Extranjeria</option>
+                    </select>
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> Seleccione un tipo de documento</p>
+            </div>
+            <!--Grupo FechaNacimineto-->
+            <div class = "formulario_grupo" id="grupo_FechaNac">
+                <label for = "FechaNac" class = "formulario_label">direccion</label>
+                <div class = "formulario_grupo-input">
+                    <input type="date" class="formulario_input" name= "FechaNac" id = "FechaNac">
+                    <i class=" fomulario_validar-estado far fa-times-circle"></i><!--iconos dentro del label-->
+                </div>
+                <p class = "formulario_input-error"> Debe colocar una fecha valida</p>
+            </div>
+            <!--Grupo Tipo Documento-->
+            <div class = "formulario_grupoCondiciones" id="grupo_terminosCondiciones">
+                <label for=""class = "formulario_label">
+                    <input class = "formulario_checkbox" type="checkbox" name="terminosCondiciones" id="terminosCondiciones">
+                    Acepto suministrar mis datos a esta pagina 
+                </label>
+            </div>
+            <!--Grupo error enviar formulario incompleto-->
+            <div class = "formulario_mensaje" id = "formulario_mensaje">
+                <p><i class="fas fa-exclamation-triangle"></i><b> Debe llenar el formulario de forma correcta</b></p>
+            </div>
+            <!--Grupo Boton de enviar-->
+            <div class = "formulario_grupo-formulario_BotonEnviar">
+                <button type = "submit" class = "formulario_botonEnviar" > Enviar </button>
+                <p class = "formulario_mensajeExito" id = "formulario_mensajeExito" > El formulario se ha enviado exitosamente</p>
+            </div>
+        </form>
+    <footer class="footer">
+        <div class="containerFooter">
+            <div class="textoFooter">
+                <p class="copyright">Whalen Caicedo Desing &copy; 2022 Todos los derechos reservados</p> 
+                <p class="copyright">Politica de privacidad</p> 
+                <p class="copyright">Terminos y condiciones</p> 
+                <div class="redesSociales">
+                    <p class="textoRedes">Siguennos en: </p>
+                    <i class='redesSocialesIcono bx bxl-facebook-circle'></i>
+                    <i class='redesSocialesIcono bx bxl-linkedin'></i>
+                    <i class='redesSocialesIcono bx bxl-instagram'></i>
+                    <i class='redesSocialesIcono bx bxl-twitter'></i>
+                    <i class='redesSocialesIcono bx bxl-twitch'></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
